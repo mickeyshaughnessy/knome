@@ -28,10 +28,14 @@ if __name__ == "__main__":
                 opps = [players[_x][_y] for (_x,_y) in opps]
                 moves = [opp.play() for opp in opps]
                 results = [game.play(move, _move) for _move in moves]
-                if sum(results) > 0:
-                    player.add()
-                else:
-                    player.subtract()
+                player.total += sum(results)
+                
+                if random.random() < 0.1:
+                    # check another nearby player's strategy. If its better adopt it.
+                    other = random.choice(opps)
+                    if other.total > player.total:
+                        player.strat = other.strat
+
 
         swaps = [(random.choice(range(SIZE)), random.choice(range(SIZE)), random.choice(range(SIZE)), random.choice(range(SIZE))) for _ in range(NSWAPS)]
         for _swap in swaps:
