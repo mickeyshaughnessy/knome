@@ -1,10 +1,12 @@
 import numpy as np
 from image.image import Drawer
-from pd import Game, Player, SIZE, NSWAPS
+from pd import Game, Player, SIZE, NSWAPS, DO_REP
+from reputation import Reputation
 import random
 
 
 drawer = Drawer()
+rep = Reputation(DO_REP)
 
 def swap(players, p1, p2, x1, y1, x2, y2):
     players[x1][y1] = p2
@@ -16,22 +18,29 @@ if __name__ == "__main__":
     players = np.random.rand(SIZE, SIZE)
     players = [[Player(random.random()) for _ in range(SIZE)] for _ in range(SIZE)]
     
-    game = Game()
+    game = Game(rep=rep)
+    N = 0
     while True:
-        print sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2)
+        N += 1
+        print N, sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2)
         drawer.draw(np.array([[p.strat for p in _row] for _row in players]))
+        drawer.draw(np.array([[game.reputation.get_rep(p._id) for p in _row] for _row in players]))
         for x in range(1,SIZE-1):
             for y in range(1,SIZE-1):
                 player = players[x][y]
-                move = player.play()
                 opps = [(x+1,y+1), (x+1,y), (x+1,y-1), (x,y+1), (x,y), (x,y-1), (x-1,y+1), (x-1,y), (x-1,y-1)]
                 opps = [players[_x][_y] for (_x,_y) in opps]
-                moves = [opp.play() for opp in opps]
-                results = [game.play(move, _move) for _move in moves]
+                opp_moves = [opp.play(game.reputation.get_rep(player._id)) for opp in opps]
+                my_moves = [player.play(game.reputation.get_rep(opp._id)) for opp in opps]
+                results = [game.play(my_move, _move) for (my_move, _move) in zip(my_moves, opp_moves)]
                 player.total += sum(results)
-                
+             
+                if DO_REP:
+                    reviews = player.rate(opp_moves)
+                    game.reputation.review(player, opps, reviews)
+
                 if random.random() < 0.1:
-                    # check another nearby player's strategy. If its better adopt it.
+                    # check another nearby player's strategy. If it is better, adopt it.
                     other = random.choice(opps)
                     if other.total > player.total:
                         player.strat = other.strat
