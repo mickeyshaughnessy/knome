@@ -5,7 +5,7 @@ from reputation import Reputation
 import random
 
 
-drawer = Drawer()
+drawer = Drawer(magnify=3)
 rep = Reputation(DO_REP)
 
 def swap(players, p1, p2, x1, y1, x2, y2):
@@ -24,7 +24,7 @@ if __name__ == "__main__":
         N += 1
         print N, sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2)
         drawer.draw(np.array([[p.strat for p in _row] for _row in players]), "strategies")
-        drawer.draw(np.array([[p.total for p in _row] for _row in players]), "totals")
+        drawer.draw(np.array([[p.total for p in _row] for _row in players]), "totals", norm=True)
         if DO_REP:
             drawer.draw(np.array([[game.reputation.get_rep(p._id) for p in _row] for _row in players]), "reputations")
         

@@ -40,10 +40,10 @@ class Game():
         self.reputation = rep
         self.matrix = {
                 # T>R>P>S, 2R > T + S
-                (False, False) : 0, # both defect, P
-                (False, True) : 30, # I defect, you cooperate T
-                (True, False) : -30, # I cooperate, you defect S
-                (True, True) : 26 # we both cooperate, R
+                (False, False) : 0.0, # both defect, P
+                (False, True) : 30.0, # I defect, you cooperate T
+                (True, False) : -30.0, # I cooperate, you defect S
+                (True, True) : 15.0 # we both cooperate, R
         }
 
     def play(self, move1, move2):
