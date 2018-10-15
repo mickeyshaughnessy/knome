@@ -21,13 +21,16 @@ if __name__ == "__main__":
     game = Game(rep=rep)
     N = 0
     while True:
+        ### Reporting and drawing ###
         N += 1
+        # reports iteration number and average strategy (degree of cooperation)
         print N, sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2)
         drawer.draw(np.array([[p.strat for p in _row] for _row in players]), "strategies")
         drawer.draw(np.array([[p.total for p in _row] for _row in players]), "totals", norm=True)
         if DO_REP:
             drawer.draw(np.array([[game.reputation.get_rep(p._id) for p in _row] for _row in players]), "reputations")
-        
+       
+        ### main loop ###
         for x in range(1,SIZE-1):
             for y in range(1,SIZE-1):
                 player = players[x][y]
@@ -37,7 +40,7 @@ if __name__ == "__main__":
                 my_moves = [player.play(game.reputation.get_rep(opp._id)) for opp in opps]
                 results = [game.play(my_move, _move) for (my_move, _move) in zip(my_moves, opp_moves)]
                 player.total += sum(results)
-             
+
                 if DO_REP:
                     reviews = player.rate(opp_moves)
                     game.reputation.review(player, opps, reviews)
@@ -47,7 +50,6 @@ if __name__ == "__main__":
                     other = random.choice(opps)
                     if other.total > player.total:
                         player.strat = other.strat
-
 
         swaps = [(random.choice(range(SIZE)), random.choice(range(SIZE)), random.choice(range(SIZE)), random.choice(range(SIZE))) for _ in range(NSWAPS)]
         for _swap in swaps:
