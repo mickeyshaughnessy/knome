@@ -23,8 +23,10 @@ if __name__ == "__main__":
     while True:
         N += 1
         print N, sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2)
-        drawer.draw(np.array([[p.strat for p in _row] for _row in players]))
-        drawer.draw(np.array([[game.reputation.get_rep(p._id) for p in _row] for _row in players]))
+        drawer.draw(np.array([[p.strat for p in _row] for _row in players]), "strats")
+        drawer.draw(np.array([[p.total for p in _row] for _row in players]), "totals")
+        drawer.draw(np.array([[game.reputation.get_rep(p._id) for p in _row] for _row in players]), "reputations")
+        print np.array([[p.total for p in _row] for _row in players])
         for x in range(1,SIZE-1):
             for y in range(1,SIZE-1):
                 player = players[x][y]

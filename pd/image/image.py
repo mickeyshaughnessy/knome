@@ -2,8 +2,12 @@ import cv2
 
 class Drawer():
 
-    def draw(self, img):
-        cv2.imshow('image', img)
+    cv2.namedWindow("strats")
+    cv2.namedWindow("reputations")
+    cv2.namedWindow("totals")
+
+    def draw(self, img, _type="strats"):
+        cv2.imshow(_type, img)
         cv2.waitKey(1)
 
 if __name__ == "__main__":
