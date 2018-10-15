@@ -2,11 +2,11 @@ import cv2
 
 class Drawer():
 
-    cv2.namedWindow("strats")
+    cv2.namedWindow("strategies")
     cv2.namedWindow("reputations")
     cv2.namedWindow("totals")
 
-    def draw(self, img, _type="strats"):
+    def draw(self, img, _type="strategies"):
         cv2.imshow(_type, img)
         cv2.waitKey(1)
 
