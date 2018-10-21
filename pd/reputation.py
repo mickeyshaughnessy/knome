@@ -7,7 +7,6 @@ class Reputation():
         self.active=active
 
     def review(self, player, opps, reviews):
-        #print reviews
         for opp, r in zip(opps, reviews):
             rep = self.ledger.get(opp._id, 0.5)
             

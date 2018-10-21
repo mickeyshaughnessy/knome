@@ -2,7 +2,7 @@ import random
 
 SIZE = 100 
 NSWAPS = 5 
-DO_REP = True 
+DO_REP = False 
 
 class Player():
 
