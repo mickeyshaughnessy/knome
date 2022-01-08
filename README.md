@@ -5,18 +5,26 @@ This repo has scripts for simulating and running a distributed reputation system
 
 # Iterated prisoner's dilemma
 ![alt text](images/mixed1.png)
-This script runs an iterated prisoner's dilemma (PD) simulation, in which the evolution of cooperation and the impact of reputation are observed.
 
-In the pd/ directory. Run as `python main.py`. Adjust config settings in pd.py
+The image shows a snapshot in time of the output of an iterated prisoner's dilemma (PD) simulation, in which the evolution of cooperation and the impact of reputation are observed.
 
 At each time step, agents interact with their neighbors in a pairwise fashion through an iteration of a 2x2 PD game.
 
+The shade of the color at each site is proportional to the degree of cooperation of the strategy at the site.
+
+In certain conditions, long-lived regions of cooperation appear
+
 It is observed that cooperating strategies are favored in the presence of a reputation system.
+
+# Running the script:
+In the pd/ directory. Run as `python main.py`. Adjust config settings in pd.py
+
+
 
 We are motivated to create such a reputation system using publicly-available data, so that cooperation can be increased.
 
 # Reputation System Principles:
-1. Reputation is a fungible quantity that is naturally associated with persons.
+1. Reputation is a fungible quantity naturally associated with persons.
 
 2. Reputation can be created or destroyed through transactions with others.
 
