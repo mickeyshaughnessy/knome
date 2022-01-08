@@ -1,6 +1,7 @@
  This repo has scripts for simulating and running a distributed reputation system.
 
 ![alt text](images/faerie.png)
+![alt text](images/mixed1.png)
 
 # Iterated prisoner's dilemma
 This script runs an iterated prisoner's dilemma (PD) simulation, in which the evolution of cooperation and the impact of reputation are observed.

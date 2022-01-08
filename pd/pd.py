@@ -43,7 +43,7 @@ class Game():
                 (False, False) : 0.0, # both defect, P
                 (False, True) : 30.0, # I defect, you cooperate T
                 (True, False) : -30.0, # I cooperate, you defect S
-                (True, True) : 15.0 # we both cooperate, R
+                (True, True) : 45.0 # we both cooperate, R
         }
 
     def play(self, move1, move2):
