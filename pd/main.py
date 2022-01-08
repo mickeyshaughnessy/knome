@@ -24,7 +24,7 @@ if __name__ == "__main__":
         ### Reporting and drawing ###
         N += 1
         # reports iteration number and average strategy (degree of cooperation)
-        print N, sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2)
+        print(N, sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2))
         drawer.draw(np.array([[p.strat for p in _row] for _row in players]), "strategies")
         drawer.draw(np.array([[p.total for p in _row] for _row in players]), "totals", norm=True)
         if DO_REP:

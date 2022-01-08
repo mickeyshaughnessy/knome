@@ -1,4 +1,8 @@
-# This repo has programs related to a distributed reputation system
+ This repo has programs related to a distributed reputation system
+
+<!--[Contribution guidelines for this project](docs/CONTRIBUTING.md)-->
+(images/sample.pdf)
+(images/sample2.png)
 
 # Iterated prisoner's dilemma
   In the pd/ directory. Run as `python main.py`. Adjust config settings in pd.py
