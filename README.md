@@ -1,5 +1,9 @@
 ![alt text](images/faerie_small.png)
 
+<p align="center">
+  <img src="images/faerie_small.png" />
+</p>
+
 This repo has scripts for simulating and running a distributed reputation system.
 
 
