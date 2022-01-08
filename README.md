@@ -1,7 +1,6 @@
  This repo has programs related to a distributed reputation system
 
 <!--[Contribution guidelines for this project](docs/CONTRIBUTING.md)-->
-![alt text](images/sample.pdf)
 ![alt text](images/sample2.png)
 
 # Iterated prisoner's dilemma
