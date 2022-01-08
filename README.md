@@ -38,4 +38,4 @@ We are motivated to create such a reputation system using publicly-available dat
 7. If both parties defect, their reputation does not change (and they pay the fixed transaction cost).
 8. If either party defects, while the other party does not, the defecting party earns a large reward. The cooperating party earns no reward, and pays a penalty.
 
-
+* Code for a simple reputation system is provided in `pd/reputation`.
