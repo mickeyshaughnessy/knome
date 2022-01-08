@@ -1,4 +1,4 @@
-![alt text](images/faerie.png)
+![alt text](images/faerie_small.png)
 
 This repo has scripts for simulating and running a distributed reputation system.
 

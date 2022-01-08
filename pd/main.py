@@ -4,7 +4,6 @@ from pd import Game, Player, SIZE, NSWAPS, DO_REP
 from reputation import Reputation
 import random
 
-
 drawer = Drawer(magnify=3)
 rep = Reputation(DO_REP)
 
@@ -12,7 +11,6 @@ def swap(players, p1, p2, x1, y1, x2, y2):
     players[x1][y1] = p2
     players[x2][y2] = p1
     return players
-
 
 if __name__ == "__main__":
     players = np.random.rand(SIZE, SIZE)
@@ -24,7 +22,7 @@ if __name__ == "__main__":
         ### Reporting and drawing ###
         N += 1
         # reports iteration number and average strategy (degree of cooperation)
-        print(N, sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2))
+        print("step: ", N, "Total Cooperation: ", sum(map(sum, [[p.strat for p in _row] for _row in players]))/(SIZE**2))
         drawer.draw(np.array([[p.strat for p in _row] for _row in players]), "strategies")
         drawer.draw(np.array([[p.total for p in _row] for _row in players]), "totals", norm=True)
         if DO_REP:
