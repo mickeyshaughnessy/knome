@@ -1,5 +1,6 @@
 ![alt text](images/faerie.png)
- This repo has scripts for simulating and running a distributed reputation system.
+
+This repo has scripts for simulating and running a distributed reputation system.
 
 
 # Iterated prisoner's dilemma
