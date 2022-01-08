@@ -1,5 +1,3 @@
-![alt text](images/faerie_small.png)
-
 <p align="center">
   <img src="images/faerie_small.png" />
 </p>
