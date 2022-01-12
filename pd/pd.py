@@ -5,7 +5,7 @@ P=0.0 # score when both defect
 T=30.0 # score when I defect, you cooperate
 S=-30.0 # score when I cooperate, you defect
 R=25.0 # score when we both cooperate
-SIZE = 100 
+SIZE = 75 
 NSWAPS = 5 
 DO_REP = False 
 
