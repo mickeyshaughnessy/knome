@@ -2,9 +2,9 @@ import random
 
 # T>R>P>S, 2R > T + S
 P=0.0 # score when both defect
-T=30.0 # score when I defect, you cooperate
-S=-30.0 # score when I cooperate, you defect
-R=25.0 # score when we both cooperate
+T=32.0 # score when I defect, you cooperate
+S=-32.0 # score when I cooperate, you defect
+R=35.0 # score when we both cooperate
 SIZE = 75 
 NSWAPS = 5 
 DO_REP = False 
