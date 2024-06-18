@@ -14,7 +14,7 @@ The shade of the color at each site is proportional to the degree of cooperation
 
 In certain conditions, long-lived regions of cooperation appear
 
-It is observed that cooperating strategies are favored in the presence of a reputation system.
+It is observed that cooperating strategies are more favored in the presence of a reputation system.
 
 # Running the script:
 In the pd/ directory. Run as `python main.py`. Adjust config settings in pd.py
