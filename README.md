@@ -1,6 +1,6 @@
 
 
-This repo has scripts for simulating and running a distributed reputation system.
+This repository has scripts for running a distributed reputation system.
 
 
 # Iterated prisoner's dilemma
